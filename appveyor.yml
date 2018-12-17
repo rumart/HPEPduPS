@@ -1,5 +1,5 @@
 version: 0.4.{build}
-skip_non_tags: false
+build: off
 install:
   - cinst pester
 test_script:
