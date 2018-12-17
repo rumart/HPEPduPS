@@ -1,3 +1,5 @@
+![Build status](https://ci.appveyor.com/api/projects/status/9ftybkutu10h8yvl?svg=true)
+
 # HPEPduPS
 Powershell module as a wrapper for the REST Api in HPE G2 Metered and switched PDUs
 
