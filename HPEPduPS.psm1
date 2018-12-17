@@ -27,9 +27,10 @@ function Invoke-HPEPduRequest {
             Info
             Author : Rudi Martinsen / Intility AS
             Date : 17/11-2018
-            Version : 0.2.1
-            Revised : 17/11-2018
+            Version : 0.2.2
+            Revised : 17/12-2018
             Changelog:
+            0.2.2 -- Putting response in variable
             0.2.1 -- Added help text
             0.2.0 -- Fixed support for credential object
         .LINK
@@ -37,6 +38,7 @@ function Invoke-HPEPduRequest {
         .LINK
             https://www.rudimartinsen.com/2018/11/19/exploring-the-hpe-g2-pdu-rest-api/
     #>
+    [cmdletbinding()]
     param(
         $System,
         $Resource,
@@ -64,9 +66,8 @@ function Invoke-HPEPduRequest {
         Set-InsecureSSL
     }
 
-    Invoke-RestMethod -Method Get -Uri $uri -Headers $header
-
-
+    $response = Invoke-RestMethod -Method Get -Uri $uri -Headers $header 
+    $response
 }
 
 function Get-HPEPdu {
@@ -81,9 +82,10 @@ function Get-HPEPdu {
             Info
             Author : Rudi Martinsen / Intility AS
             Date : 17/11-2018
-            Version : 0.2.1
-            Revised : 17/11-2018
+            Version : 0.2.2
+            Revised : 17/12-2018
             Changelog:
+            0.2.2 -- Added check on credentials
             0.2.1 -- Added help text
             0.2.0 -- Fixed support for credential object
         .LINK
@@ -158,6 +160,11 @@ function Get-HPEPdu {
         }
         $Credential = New-Object System.Management.Automation.PSCredential($Username,$Password)
     }
+    elseif($Credential){
+    }
+    else{
+        Write-Error "Username or Credential object not specified. Please specify valid credentials for connecting to the PDU"
+    }
 
     $Path = "/redfish/v1/PowerDistribution"
 
@@ -177,7 +184,7 @@ function Get-HPEPdu {
         Write-Warning "Unspecified output, the type is $($response.'@odata.type')"
     }
     else{
-        Write-Error "Something went wrong..."
+        #Write-Error "An error occured"
     }
 
 }
@@ -193,9 +200,10 @@ function Get-HPEPduOutlet {
             Info
             Author : Rudi Martinsen / Intility AS
             Date : 17/11-2018
-            Version : 0.2.1
-            Revised : 17/11-2018
+            Version : 0.2.2
+            Revised : 17/12-2018
             Changelog:
+            0.2.2 -- Added check on credentials
             0.2.1 -- Added help text
             0.2.0 -- Fixed support for credential object
         .LINK
@@ -263,6 +271,11 @@ function Get-HPEPduOutlet {
         }
         $Credential = New-Object System.Management.Automation.PSCredential($Username,$Password)
     }
+    elseif($Credential){
+    }
+    else{
+        Write-Error "Username or Credential object not specified. Please specify valid credentials for connecting to the PDU"
+    }
 
     $Path = "/redfish/v1/PowerDistribution/$PduId/PowerControl/Loadsegment/$SegmentId/OutletControl"
 
@@ -271,6 +284,7 @@ function Get-HPEPduOutlet {
     if($response.'@odata.type' -eq '#OutletControl.1.0.0.OutletControl'){
         $response.Outlets
     }
+    
 }
 
 function Get-HPEPduLoadMeasurement {
@@ -284,9 +298,10 @@ function Get-HPEPduLoadMeasurement {
             Info
             Author : Rudi Martinsen / Intility AS
             Date : 17/11-2018
-            Version : 0.2.1
-            Revised : 17/11-2018
+            Version : 0.2.2
+            Revised : 17/12-2018
             Changelog:
+            0.2.2 -- Added check on credentials
             0.2.1 -- Added help text
             0.2.0 -- Fixed support for credential object
         .LINK
@@ -387,6 +402,11 @@ function Get-HPEPduLoadMeasurement {
         }
         $Credential = New-Object System.Management.Automation.PSCredential($Username,$Password)
     }
+    elseif($Credential){
+    }
+    else{
+        Write-Error "Username or Credential object not specified. Please specify valid credentials for connecting to the PDU"
+    }
 
     $Path = "/redfish/v1/PowerDistribution/$PduId/PowerMeasurement/LoadsegmentMeasurement"
 
@@ -395,6 +415,7 @@ function Get-HPEPduLoadMeasurement {
     if($response.'@odata.type' -eq '#PowerMeasurement.1.0.0.PowerMeasurement'){
         $response.Loadsegments
     }
+    
 }
 
 function Get-HPEPduOutletMeasurement {
@@ -408,9 +429,10 @@ function Get-HPEPduOutletMeasurement {
             Info
             Author : Rudi Martinsen / Intility AS
             Date : 17/11-2018
-            Version : 0.2.1
-            Revised : 17/11-2018
+            Version : 0.2.2
+            Revised : 17/12-2018
             Changelog:
+            0.2.2 -- Added check on credentials
             0.2.1 -- Added help text
             0.2.0 -- Fixed support for credential object
         .LINK
@@ -490,6 +512,11 @@ function Get-HPEPduOutletMeasurement {
         }
         $Credential = New-Object System.Management.Automation.PSCredential($Username,$Password)
     }
+    elseif($Credential){
+    }
+    else{
+        Write-Error "Username or Credential object not specified. Please specify valid credentials for connecting to the PDU"
+    }
 
     $Path = "/redfish/v1/PowerDistribution/$PduId/PowerMeasurement/Loadsegment/$SegmentId/OutletMeasurement"
 
@@ -498,4 +525,5 @@ function Get-HPEPduOutletMeasurement {
     if($response.'@odata.type' -eq '#OutletMeasurement.1.0.0.OutletMeasurement'){
         $response.Outlets
     }
+    
 }
