@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Restructuring module, moving functions out of psm1 in to folders
 
+## [version 0.4.1] - 2018-12-17
+### Added
+- Appveyor config and connection for CI
+
 ## [version 0.4.0] - 2018-12-17
 ### Added
 - Pester test for valid Powershell and module import
