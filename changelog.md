@@ -7,11 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-- Pester tests
+- More Pester tests
 - Support more functionality from API
 - Output format
 ### Changed
 - Restructuring module, moving functions out of psm1 in to folders
+
+## [version 0.4.0] - 2018-12-17
+### Added
+- Pester test for valid Powershell and module import
 
 ## [version 0.3.1] - 2018-12-17
 ### Fixed
