@@ -10,29 +10,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Restructuring module, moving functions out of psm1 in to folders
 - Pester tests
 - Support more functionality from API
+- Output format
 
-## version 0.3.0 - 2018-12-17
+## [version 0.3.1] - 2018-12-17
+### Fixed
+- Fixed bug in parameter name in Invoke-Restmethod call inside the Invoke-HpePduRequest function
+
+## [version 0.3.0] - 2018-12-17
 ### Changed
 - Setting system, PDU Id and Segment Id as a mandatory parameter
 
-## version 0.2.3 - 2018-12-17
+## [version 0.2.3] - 2018-12-17
 ### Changed
 - Added check on username and credential parameter
 
-## version 0.2.2 - 2018-11-18
+## [version 0.2.2] - 2018-11-18
 ### Changed
 - Updated changelog with Keep a changelog changes
 
-## version 0.2.1 - 2018-11-17
+## [version 0.2.1] - 2018-11-17
 ### Added
 - Help text added to all functions
 
-## version 0.2.0 - 2018-11-17
+## [version 0.2.0] - 2018-11-17
 ### Added
 
 - All functions support the use of a PSCredential object which you can create before you use the functions and then pass this object to each function call. Username/password will still work as in the previous version
 
-## version 0.1.0
+## [version 0.1.0]
 
 Initial creation of the module with the following functions available.
 

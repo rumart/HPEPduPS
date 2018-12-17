@@ -27,9 +27,10 @@ function Invoke-HPEPduRequest {
             Info
             Author : Rudi Martinsen / Intility AS
             Date : 17/11-2018
-            Version : 0.2.3
+            Version : 0.2.4
             Revised : 17/12-2018
             Changelog:
+            0.2.4 -- Fixed wrong param name in api request
             0.2.3 -- Outputting error message in verbose
             0.2.2 -- Putting response in variable
             0.2.1 -- Added help text
@@ -67,7 +68,7 @@ function Invoke-HPEPduRequest {
         Set-InsecureSSL
     }
 
-    $response = Invoke-RestMethod -Method Get -Uri $uri -Headers $header -ErrorAction apiErr
+    $response = Invoke-RestMethod -Method Get -Uri $uri -Headers $header -ErrorVariable apiErr
     if($apiErr){
         Write-Verbose $apiErr.InnerException
     }
