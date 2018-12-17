@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## version 0.3.0 - 2018-12-17
+### Changed
+- Setting system, PDU Id and Segment Id as a mandatory parameter
+
 ## version 0.2.3 - 2018-12-17
 ### Changed
 - Added check on username and credential parameter
