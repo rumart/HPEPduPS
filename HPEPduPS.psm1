@@ -204,9 +204,10 @@ function Get-HPEPduOutlet {
             Info
             Author : Rudi Martinsen / Intility AS
             Date : 17/11-2018
-            Version : 0.2.2
+            Version : 0.3.0
             Revised : 17/12-2018
             Changelog:
+            0.3.0 -- Setting params as mandatory
             0.2.2 -- Added check on credentials
             0.2.1 -- Added help text
             0.2.0 -- Fixed support for credential object
@@ -254,8 +255,10 @@ function Get-HPEPduOutlet {
     param(
         [Parameter(Mandatory=$true)]
         $System,
+        [Parameter(Mandatory=$true)]
         [int]
         $PDUId,
+        [Parameter(Mandatory=$true)]
         [int]
         $SegmentId,
         [Parameter(Mandatory=$false,ParameterSetName="username")]
@@ -302,9 +305,10 @@ function Get-HPEPduLoadMeasurement {
             Info
             Author : Rudi Martinsen / Intility AS
             Date : 17/11-2018
-            Version : 0.2.2
+            Version : 0.3.0
             Revised : 17/12-2018
             Changelog:
+            0.3.0 -- Setting pduid as a mandatory variable
             0.2.2 -- Added check on credentials
             0.2.1 -- Added help text
             0.2.0 -- Fixed support for credential object
@@ -387,6 +391,7 @@ function Get-HPEPduLoadMeasurement {
     param(
         [Parameter(Mandatory=$true)]
         $System,
+        [Parameter(Mandatory=$true)]
         [int]
         $PDUId,
         [Parameter(Mandatory=$false,ParameterSetName="username")]
@@ -433,9 +438,10 @@ function Get-HPEPduOutletMeasurement {
             Info
             Author : Rudi Martinsen / Intility AS
             Date : 17/11-2018
-            Version : 0.2.2
+            Version : 0.3.0
             Revised : 17/12-2018
             Changelog:
+            0.3.0 -- Setting pduid as a mandatory variable
             0.2.2 -- Added check on credentials
             0.2.1 -- Added help text
             0.2.0 -- Fixed support for credential object
@@ -494,9 +500,12 @@ function Get-HPEPduOutletMeasurement {
     #>
     [cmdletbinding()]
     param(
+        [Parameter(Mandatory=$true)]
         $System,
+        [Parameter(Mandatory=$true)]
         [int]
         $PDUId,
+        [Parameter(Mandatory=$true)]
         [int]
         $SegmentId,
         [Parameter(Mandatory=$false,ParameterSetName="username")]
