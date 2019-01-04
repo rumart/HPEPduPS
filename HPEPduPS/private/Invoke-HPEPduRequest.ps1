@@ -22,6 +22,8 @@ function Invoke-HPEPduRequest {
             https://github.com/rumart/hpe-g2-pdu
         .LINK
             https://www.rudimartinsen.com/2018/11/19/exploring-the-hpe-g2-pdu-rest-api/
+        .LINK
+            https://www.rudimartinsen.com/2019/01/04/hpe-pdu-powershell-module/
     #>
     [cmdletbinding()]
     param(

@@ -75,6 +75,7 @@ OutletControl           : {@{@odata.id=/redfish/v1/PowerDistribution/1/PowerCont
 
 All functions have help functionality included
 
+For more information about the module check out my [blog post](https://www.rudimartinsen.com/2019/01/04/hpe-pdu-powershell-module/) about it
 
 Please refer to this [repository](https://github.com/rumart/hpe-g2-pdu-api) for more information about the PDU Rest API.
 

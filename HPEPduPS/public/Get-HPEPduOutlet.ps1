@@ -22,6 +22,8 @@ function Get-HPEPduOutlet {
             https://github.com/rumart/hpe-g2-pdu-api
         .LINK
             https://www.rudimartinsen.com/2018/11/19/exploring-the-hpe-g2-pdu-rest-api/
+        .LINK
+            https://www.rudimartinsen.com/2019/01/04/hpe-pdu-powershell-module/
         .EXAMPLE
             PS C:\> Get-HPEPduOutlet -System 10.10.10.10 -PDUId 1 -SegmentId 1 -Credential $credential
 
