@@ -9,9 +9,10 @@ function Invoke-HPEPduRequest {
             Info
             Author : Rudi Martinsen / Intility AS
             Date : 17/11-2018
-            Version : 0.2.4
-            Revised : 17/12-2018
+            Version : 1.0.0
+            Revised : 04/01-2019
             Changelog:
+            1.0.0 -- Bumped version number
             0.2.4 -- Fixed wrong param name in API request
             0.2.3 -- Outputting error message in verbose
             0.2.2 -- Putting response in variable

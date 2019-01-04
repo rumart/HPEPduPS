@@ -11,9 +11,10 @@ function Get-HPEPdu {
             Info
             Author : Rudi Martinsen / Intility AS
             Date : 17/11-2018
-            Version : 0.2.2
-            Revised : 17/12-2018
+            Version : 1.0.0
+            Revised : 04/01-2019
             Changelog:
+            1.0.0 -- Bumped version number
             0.2.2 -- Added check on credentials
             0.2.1 -- Added help text
             0.2.0 -- Fixed support for credential object

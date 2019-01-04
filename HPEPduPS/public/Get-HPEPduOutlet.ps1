@@ -10,9 +10,10 @@ function Get-HPEPduOutlet {
             Info
             Author : Rudi Martinsen / Intility AS
             Date : 17/11-2018
-            Version : 0.3.0
-            Revised : 17/12-2018
+            Version : 1.0.0
+            Revised : 04/01-2019
             Changelog:
+            1.0.0 -- Bumped version number
             0.3.0 -- Setting params as mandatory
             0.2.2 -- Added check on credentials
             0.2.1 -- Added help text
