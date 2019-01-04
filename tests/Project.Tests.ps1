@@ -1,6 +1,7 @@
+#This test expects the module to reside in a subfolder of the projectroot with the same name as the projectroot
 $projectRoot = Resolve-Path "$PSScriptRoot\.."
-$moduleRoot = Split-Path (Resolve-Path "$projectRoot\*.psm1")
-$moduleName = Split-Path $moduleRoot -Leaf
+$moduleName = Split-Path $projectRoot -Leaf
+$moduleRoot = Split-Path (Resolve-Path "$projectRoot\$moduleName\*.psm1")
 
 Describe "General project validation: $moduleName" {
 
@@ -20,6 +21,6 @@ Describe "General project validation: $moduleName" {
     }
 
     It "Module '$moduleName' can import cleanly" {
-        {Import-Module (Join-Path $moduleRoot "$moduleName.psm1") -force } | Should Not Throw
+        {Import-Module (Join-Path $moduleRoot "$moduleName.psd1") -force } | Should Not Throw
     }
 }

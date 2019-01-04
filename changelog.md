@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - More Pester tests
 - Support more functionality from API
 - Output format
+
+## [version 1.0.0] - 2019-01-04
 ### Changed
 - Restructuring module, moving functions out of psm1 in to folders
 
